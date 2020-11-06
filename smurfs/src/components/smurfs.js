@@ -8,7 +8,10 @@ const SmurfList = (props) => {
         props.findingSmurf();
     }, []);
 
+    useEffect(() => {
+        props.findingSmurf();
 
+    }, [props.isPosting])
 
     return (
         <div>
@@ -25,7 +28,8 @@ const SmurfList = (props) => {
 const mapStateToProps = (state) => {
     return {
         smurfs: state.smurfs,
-        error: state.error
+        error: state.error,
+        isPosting: state.isPosting
     }
 }
 export default connect(mapStateToProps, { findingSmurf })(SmurfList);
