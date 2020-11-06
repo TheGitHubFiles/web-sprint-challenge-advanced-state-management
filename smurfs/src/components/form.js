@@ -9,9 +9,7 @@ const Form = (props) => {
     const [form, setForm] = useState(formValues)
 
     const submit = e => {
-        e.stopPropagation()
-        e.preventDefault()
-        props.makingSmurf()
+        props.makingSmurf(form)
     }
     const onChange = e => {
         setForm({ ...form, [e.target.name]: e.target.value })

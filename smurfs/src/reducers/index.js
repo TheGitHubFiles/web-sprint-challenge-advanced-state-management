@@ -29,7 +29,7 @@ export const reducer = (state = initialState, action) => {
         case MAKE_SMURF:
             return {
                 ...state,
-                smurfs: action.payload
+                smurfs: state.smurfs
             }
         case SMURF_NOT_MADE:
             return {
